@@ -13,3 +13,6 @@ def produto_detalhe(request):
 
     return render(request, 'produto_detalhes.html')
  
+def institucional(request):
+
+    return render(request, 'empresa.html')
