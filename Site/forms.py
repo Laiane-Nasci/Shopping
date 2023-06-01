@@ -10,4 +10,17 @@ class Clienteform(forms.ModelForm):
             'cep': forms.TextInput(attrs={'class':'cep'}),
             'data_nascimento': forms.TextInput(attrs={'class':'date'}),
             }
+
+class ContatoForm(forms.Form):
+    nome = forms.CharField()
+    email = forms.EmailField()
+    telefone = forms.CharField()
+    assunto = forms.CharField()
+    mensagem= forms.CharField()
+
+    class Meta:
+        widgets = {
+            'telefone': forms.TextInput(attrs={'class':'phone_whidt_ddd'}),
+            'mensagem': forms.Textarea,
+        }
                     
