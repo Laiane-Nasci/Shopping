@@ -61,17 +61,22 @@ def institucional(request):
 
 def cadastro(request):
     departamentos = Departamento. objects.all()
+    mensagem = ""
 
+    #quando envia o formulário preenchido
     if request.method == "POST":
         formulario = Clienteform(request.POST)
         if formulario.is_valid():
             Cliente = formulario.save()
             formulario = Clienteform()
+            mensagem = "Cliente cadastrado com sucesso"
+    #quando entra na tela vazia
     else:
         formulario = Clienteform()
     context = {
         'departamentos':departamentos,
-        'form_cliente' : formulario 
+        'form_cliente' : formulario,
+        'mensagem': mensagem
     }
     return render(request, 'cadastro.html', context)
 
