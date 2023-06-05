@@ -92,7 +92,7 @@ def contato(request):
         assunto = request.POST['assunto']
         mensagem = request.POST['mensagem']
         remetente = request.POST['email']
-        destinatario = ['profronicosta@gmail.com']
+        destinatario = ['laiane.nasc.silva@gmail.com']
         corpo = f"Nome: {nome} \nTelefone: {telefone}  \nMensagem: {mensagem}"
     
         try:
@@ -100,8 +100,8 @@ def contato(request):
             mensagem = 'E-mail enviado com sucesso!'
         except:
             mensagem = 'Erro ao enviar e-mail!'
-    else:
-        formulario = ContatoForm()
+    
+    formulario = ContatoForm()
 
     context = {
         'departamentos': departamentos,
